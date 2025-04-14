@@ -1,0 +1,31 @@
+
+import javax.swing.JOptionPane;
+
+
+public class SuperMarché {
+    public static void main(String[] args) {
+        
+        String nomArticle = JOptionPane.showInputDialog("Entrez le nom de l'article :");
+
+        
+        String montantString = JOptionPane.showInputDialog("Entrez le montant de "+nomArticle+":");
+        double montant = Double.parseDouble(montantString);
+        
+        
+        String quantiteString = JOptionPane.showInputDialog("Entrez la quantité de "+nomArticle+":");
+        int quantite = Integer.parseInt(quantiteString);
+        
+        
+        double prixTotal = montant * quantite;
+        double tva = prixTotal*15/100;
+        
+        
+        String message = "Nom de l'article : " + nomArticle + "\n"
+                        + "Montant unitaire : " + montant + "\n"
+                        + "Quantité : " + quantite + "\n"
+                        + "Prix total : " + prixTotal +"\n"
+                        + "Tva récuperable : "  +tva;
+        
+        JOptionPane.showMessageDialog(null, message);
+}
+}
